@@ -1,6 +1,7 @@
 {
     "name": "artyomveselkov/auto-order-assign",
     "description": "Magento 1 module for manual and automatic reassignment of orders between registered customers or guests.",
+    "license": "MIT",
     "require": {
         "php": ">=5.4.0",
         "magento-hackathon/magento-composer-installer": "*"
