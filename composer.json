@@ -1,5 +1,5 @@
 {
-    "name": "ArtyomVeselkov/auto-order-assign",
+    "name": "artyomveselkov/auto-order-assign",
     "description": "Magento 1 module for manual and automatic reassignment of orders between registered customers or guests.",
     "require": {
         "php": ">=5.4.0",
