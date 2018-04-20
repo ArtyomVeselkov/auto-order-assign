@@ -19,6 +19,17 @@
                 <name>optimlight/aoa/form-assign.css</name>
                 <params/>
             </action>
+            <action method="addJs">
+                <script>prototype/window.js</script>
+            </action>
+            <action method="addItem">
+                <type>js_css</type>
+                <name>prototype/windows/themes/default.css</name>
+            </action>
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>lib/prototype/windows/themes/magento.css</name>
+            </action>
         </reference>
         <reference name="before_body_end">
             <block type="opt_aoa/adminhtml_formAssign" name="optimlight.aoa.form-assign.block" template="optimlight/aoa/form-assign.phtml"/>
