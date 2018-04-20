@@ -1,0 +1,173 @@
+<?xml version="1.0"?>
+
+<!--
+  ~  Copyright © 2018 Optimlight. All rights reserved.
+  ~  See LICENSE.txt for license details.
+  -->
+
+<config>
+    <modules>
+        <Optimlight_AutoOrderAssign>
+            <version>0.0.1</version>
+        </Optimlight_AutoOrderAssign>
+    </modules>
+
+    <global>
+        <models>
+            <opt_aoa>
+                <class>Optimlight_AutoOrderAssign_Model</class>
+                <resourceModel>opt_aoa_resource</resourceModel>
+            </opt_aoa>
+            <opt_aoa_resource>
+                <class>Optimlight_AutoOrderAssign_Model_Resource</class>
+                <entities>
+                    <reference>
+                        <table>opt_aoa_reference</table>
+                    </reference>
+                </entities>
+            </opt_aoa_resource>
+        </models>
+
+        <blocks>
+            <opt_aoa>
+                <class>Optimlight_AutoOrderAssign_Block</class>
+            </opt_aoa>
+        </blocks>
+
+        <helpers>
+            <opt_aoa>
+                <class>Optimlight_AutoOrderAssign_Helper</class>
+            </opt_aoa>
+        </helpers>
+
+        <resources>
+            <opt_aoa_setup>
+                <setup>
+                    <module>Optimlight_AutoOrderAssign</module>
+                </setup>
+            </opt_aoa_setup>
+            <opt_aoa_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </opt_aoa_write>
+            <opt_aoa_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </opt_aoa_read>
+        </resources>
+
+        <events>
+            <opt_aoa_order_assign_after>
+                <observers>
+                    <opt_aoa_after_reassign_transfer_reward_points>
+                        <class>opt_aoa/observer</class>
+                        <method>transferRewardPoints</method>
+                    </opt_aoa_after_reassign_transfer_reward_points>
+                </observers>
+            </opt_aoa_order_assign_after>
+        </events>
+    </global>
+
+    <adminhtml>
+        <layout>
+            <updates>
+                <opt_aoa>
+                    <file>optimlight/aoa/main.xml</file>
+                </opt_aoa>
+            </updates>
+        </layout>
+        <events>
+            <core_layout_block_create_after>
+                <observers>
+                    <opt_aoa_add_reassign_button>
+                        <class>opt_aoa/observer</class>
+                        <method>addOrderReassignButton</method>
+                    </opt_aoa_add_reassign_button>
+                </observers>
+            </core_layout_block_create_after>
+
+            <opt_customer_checkout_sales_grid_collection_after>
+                <observers>
+                    <opt_aoa_integrate_labels_to_customer_checkout>
+                        <type>singleton</type>
+                        <class>opt_aoa/observer</class>
+                        <method>addCustomerCheckoutLabel</method>
+                    </opt_aoa_integrate_labels_to_customer_checkout>
+                </observers>
+            </opt_customer_checkout_sales_grid_collection_after>
+        </events>
+    </adminhtml>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <opt_aoa before="Mage_Adminhtml">Optimlight_AutoOrderAssign_Adminhtml</opt_aoa>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+    <default>
+        <opt_aoa>
+        </opt_aoa>
+    </default>
+
+    <crontab>
+        <jobs>
+            <opt_aoa_process>
+                <schedule>
+                    <cron_expr>* * * * *</cron_expr>
+                </schedule>
+                <run>
+                    <model>opt_aoa/cron::run</model>
+                </run>
+            </opt_aoa_process>
+        </jobs>
+    </crontab>
+
+    <optimlight>
+        <aoa>
+            <transfer_rules>
+                <order table="sales/order" id="entity_id" key="order/entity_id" skipnull="customer_id" limit="1">
+                    <customer_id>customer_target/entity_id</customer_id>
+                    <customer_email notnull="1">customer_target/email</customer_email>
+                    <customer_group_id notnull="1">customer_target/group_id</customer_group_id>
+                </order>
+                <order_grid table="sales/order_grid" id="entity_id" key="order/entity_id" skipnull="customer_id" limit="1">
+                    <customer_id>customer_target/entity_id</customer_id>
+                </order_grid>
+                <quote table="sales/quote" id="entity_id" key="order/quote_id" limit="1" skipnull="customer_id" optional="1">
+                    <customer_id>customer_target/entity_id</customer_id>
+                    <customer_email notnull="1">customer_target/email</customer_email>
+                    <customer_group_id notnull="1">customer_target/group_id</customer_group_id>
+                </quote>
+                <order_address table="sales/order_address" id="parent_id" key="order/entity_id" skipnull="customer_id" limit="10" optional="1">
+                    <customer_id>customer_target/entity_id</customer_id>
+                    <email notnull="1">customer_target/email</email>
+                </order_address>
+                <quote_address table="sales/quote_address" id="quote_id" key="order/quote_id" skipnull="customer_id" limit="10" optional="1">
+                    <customer_id>customer_target/entity_id</customer_id>
+                    <email notnull="1">customer_target/email</email>
+                </quote_address>
+                <shipment table="sales/shipment" id="order_id" key="order/entity_id" skipnull="customer_id" limit="10" optional="1">
+                    <customer_id>customer_target/entity_id</customer_id>
+                </shipment>
+            </transfer_rules>
+        </aoa>
+    </optimlight>
+
+    <default>
+        <opt_aoa>
+            <general>
+                <queue_limit>100</queue_limit>
+                <queue_pause>20</queue_pause>
+            </general>
+        </opt_aoa>
+    </default>
+
+</config>

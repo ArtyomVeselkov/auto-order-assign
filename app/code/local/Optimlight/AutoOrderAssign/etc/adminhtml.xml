@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<!--
+  ~  Copyright © 2018 Optimlight. All rights reserved.
+  ~  See LICENSE.txt for license details.
+  -->
+
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <opt_aoa>
+                                        <title>Automatic Order-Customer Assign</title>
+                                    </opt_aoa>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

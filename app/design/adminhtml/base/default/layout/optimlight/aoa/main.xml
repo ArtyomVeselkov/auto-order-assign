@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+
+<!--
+  ~  Copyright © 2018 Optimlight. All rights reserved.
+  ~  See LICENSE.txt for license details.
+  -->
+
+<layout>
+    <!-- Reassign button. -->
+    <opt_aoa_adminhtml_form_assign>
+        <reference name="head">
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>optimlight/aoa/form-assign.js</name>
+                <params/>
+            </action>
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>optimlight/aoa/form-assign.css</name>
+                <params/>
+            </action>
+        </reference>
+        <reference name="before_body_end">
+            <block type="opt_aoa/adminhtml_formAssign" name="optimlight.aoa.form-assign.block" template="optimlight/aoa/form-assign.phtml"/>
+        </reference>
+    </opt_aoa_adminhtml_form_assign>
+
+    <!-- Append to "order view". -->
+    <adminhtml_sales_order_view>
+        <update handle="opt_aoa_adminhtml_form_assign" />
+    </adminhtml_sales_order_view>
+
+    <!-- Config styles. -->
+    <adminhtml_system_config_edit>
+        <reference name="head">
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>optimlight/aoa/form-assign.css</name>
+                <params/>
+            </action>
+        </reference>
+    </adminhtml_system_config_edit>
+</layout>

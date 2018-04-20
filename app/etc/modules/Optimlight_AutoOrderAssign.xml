@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<!--
+  ~  Copyright © 2018 Optimlight. All rights reserved.
+  ~  See LICENSE.txt for license details.
+  -->
+
+<config>
+    <modules>
+        <Optimlight_AutoOrderAssign>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Optimlight_AutoOrderAssign>
+    </modules>
+</config>

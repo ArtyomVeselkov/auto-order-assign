@@ -1,0 +1,19 @@
+{
+    "name": "ArtyomVeselkov/auto-order-assign",
+    "description": "Magento 1 module for manual and automatic reassignment of orders between registered customers or guests.",
+    "require": {
+        "php": ">=5.4.0",
+        "magento-hackathon/magento-composer-installer": "*"
+    },
+    "type": "magento-module",
+    "author": [
+        {
+            "name": "Artyom Veselkov",
+            "homepage": "https://github.com/ArtyomVeselkov/auto-order-assign"
+        }
+    ],
+    "minimum-stability": "dev",
+    "extra":{
+        "magento-root-dir": "."
+    }
+}

@@ -1,0 +1,87 @@
+/*
+ *  Copyright © 2018 Optimlight. All rights reserved.
+ *  See LICENSE.txt for license details.
+ */
+
+.optimlight-aoa-form .block {
+    display: block;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    overflow: auto;
+    clear: both;
+}
+
+.optimlight-aoa-form label {
+    display: inline-block;
+    float: left;
+}
+
+.optimlight-aoa-form input, .optimlight-aoa-form textarea, .optimlight-aoa-form select {
+    display: inline-block;
+    float: right;
+}
+
+form.optimlight-aoa-form {
+    margin:10px 0;
+}
+
+.optimlight-aoa-form label {
+    color: #404040;
+    float: left;
+    font-size: 13px;
+    line-height: 18px;
+    padding-top: 6px;
+    text-align: right;
+    width: 130px;
+}
+
+.optimlight-aoa-form label, .optimlight-aoa-form input, .optimlight-aoa-form select, .optimlight-aoa-form textarea {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: normal;
+}
+
+.optimlight-aoa-form input, .optimlight-aoa-form textarea, .optimlight-aoa-form select {
+    -moz-border-radius: 3px 3px 3px 3px;
+    border: 1px solid #CCCCCC;
+    color: #808080;
+    display: inline-block;
+    font-size: 13px;
+    height: 18px;
+    line-height: 18px;
+    padding: 4px;
+    min-width: 290px;
+}
+
+.optimlight-aoa-form textarea {
+    resize: vertical;
+    height: 7em;
+}
+
+.optimlight-aoa-form select {
+    height: 27px;
+    line-height: 27px;
+}
+
+form.optimlight-aoa-form .input {
+    margin-left: 150px;
+}
+
+form.optimlight-aoa-form .block {
+    margin-bottom: 18px;
+}
+
+.optimlight-aoa-form .clearfix {
+    overflow: auto;
+}
+
+.optimlight-aoa-form .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.optimlight-aoa-table__label {
+    font-weight: bold;
+}

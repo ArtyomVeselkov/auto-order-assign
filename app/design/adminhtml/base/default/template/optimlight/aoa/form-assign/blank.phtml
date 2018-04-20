@@ -1,0 +1,35 @@
+<?php
+/**
+ *  Copyright © 2018 Optimlight. All rights reserved.
+ *  See LICENSE.txt for license details.
+ */
+
+/** @var Optimlight_AutoOrderAssign_Block_Adminhtml_System_Config_Info $this */
+?>
+
+<form class="optimlight-aoa-form">
+    <div class="block">
+        <label for="order-id">Order ID:</label>
+        <div class="input clearfix">
+            <input class="customer-identifier" name="order_id" id="order-id" readonly="readonly">
+        </div>
+    </div>
+    <div class="block required">
+        <label for="customer-identifier">New customer&apos;s email or ID: <span class="required">*</span></label>
+        <div class="input clearfix">
+            <input class="customer-identifier" name="customer_identifier" id="customer-identifier">
+        </div>
+    </div>
+    <div class="block">
+        <label for="history">History:</label>
+        <div class="input clearfix">
+            <textarea readonly="readonly" id="history"></textarea>
+        </div>
+    </div>
+    <div class="block">
+        <label for="messages">Messages:</label>
+        <div class="input clearfix">
+            <textarea readonly="readonly" id="messages"></textarea>
+        </div>
+    </div>
+</form>

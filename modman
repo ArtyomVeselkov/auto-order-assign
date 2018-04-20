@@ -1,0 +1,5 @@
+app/code/local/Optimlight/AutoOrderAssign                                                  app/code/local/Optimlight/AutoOrderAssign
+app/design/adminhtml/base/default/layout/optimlight/aoa                                    app/design/adminhtml/base/default/layout/optimlight/aoa
+app/design/adminhtml/base/default/template/optimlight/aoa                                  app/design/adminhtml/base/default/template/optimlight/aoa
+app/etc/modules/Optimlight_AutoOrderAssign.xml                                             app/etc/modules/Optimlight_AutoOrderAssign.xml
+skin/adminhtml/base/default/optimlight/aoa                                                 skin/adminhtml/base/default/optimlight/aoa

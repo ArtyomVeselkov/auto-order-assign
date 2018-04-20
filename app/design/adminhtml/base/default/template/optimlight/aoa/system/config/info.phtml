@@ -1,0 +1,44 @@
+<?php
+/**
+ *  Copyright © 2018 Optimlight. All rights reserved.
+ *  See LICENSE.txt for license details.
+ */
+
+/** @var Optimlight_AutoOrderAssign_Block_Adminhtml_System_Config_Info $this */
+?>
+<table class="optimlight-aoa-table">
+    <tr>
+        <td>
+            <span class="optimlight-aoa-table__label"><?= $this->__('Orders count:'); ?></span>
+        </td>
+        <td>
+            <span class="optimlight-aoa-table__value"><?= $this->getDataUsingMethod('orders_count'); ?></span>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <span class="optimlight-aoa-table__label"><?= $this->__('Current queue size: '); ?></span>
+        </td>
+        <td>
+            <span class="optimlight-aoa-table__value"><?= $this->getDataUsingMethod('queue_count'); ?></span>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <span class="optimlight-aoa-table__label"><?= $this->__('Processed count (total):'); ?></span>
+        </td>
+        <td>
+            <span class="optimlight-aoa-table__value"><?= $this->getDataUsingMethod('processed_count'); ?></span>
+            <span class="optimlight-aoa-table__value--stats"> (<?= $this->printStats('orders_count', 'processed_count'); ?>)</span>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <span class="optimlight-aoa-table__label"><?= $this->__('Reassigned count:'); ?></span>
+        </td>
+        <td>
+            <span class="optimlight-aoa-table__value"><?= $this->getDataUsingMethod('processed_count_reassigned'); ?></span>
+            <span class="optimlight-aoa-table__value--stats"> (<?= $this->printStats('orders_count', 'processed_count_reassigned'); ?>)</span>
+        </td>
+    </tr>
+</table>

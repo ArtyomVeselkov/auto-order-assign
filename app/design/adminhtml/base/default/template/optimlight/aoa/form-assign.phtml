@@ -1,0 +1,18 @@
+<?php
+/**
+ *  Copyright © 2018 Optimlight. All rights reserved.
+ *  See LICENSE.txt for license details.
+ */
+
+    /** @var Optimlight_AutoOrderAssign_Block_Adminhtml_FormAssign $this */
+    $config = $this->dumpConfig(false, true);
+?>
+
+<script type="text/javascript">
+    try {
+        new optimlightAoaFormAssign(<?= $config; ?>);
+    } catch (e) {
+        console.log('Unable create AutoAssign form model.');
+        console.log(e);
+    }
+</script>
