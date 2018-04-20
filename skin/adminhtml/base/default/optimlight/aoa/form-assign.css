@@ -3,6 +3,12 @@
  *  See LICENSE.txt for license details.
  */
 
+
+button.optimlight-aoa-reassign-button span {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAPCAYAAADtc08vAAAABHNCSVQICAgIfAhkiAAAAVJJREFUKJGdkj1Lw1AUho+fGfID/AN2FlzqIigdCkqXDP0BxdWtkxFBhA5CSiAU7pYpiIhkqCGlhZItoIUOgYJDwSHYzvXemOEmxymlxaRfz/qe5+V+HIAVqFarV4Ig7Kwym4rrut1ms2kIgrC7cQEiomVZTxuVJAWIiLZtP4uiuLdofluSpFNCSM1xnDfP894nk8kPztBqtV5SS0ql0slgMOhHURTjEtrt9qsoivtTuVKpXDLG2DJxlk6nYwIAQKFQOKKU0nVkznlMCKkBAGx5nvexrtxoNB6So19wzufuHIZh2Ov1HMMwNF3XH0ejkT8ra5p2P727aZp6EgZBEBBCarlc7iDtGznnsaqqd3MvPxwOPxERfd//KhaLx1l7wDmP6/X67b+QMfY7Ho+/8/n8YdZiuK7bVRTlJjWklAblcvksSwYAkCTpPDOUZfl6kbyMP06Zf9vladd6AAAAAElFTkSuQmCC');
+    padding-left: 24px;
+}
+
 .optimlight-aoa-form .block {
     display: block;
     margin-top: 40px;
